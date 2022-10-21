@@ -11,7 +11,7 @@ using marketplace.Data;
 namespace marketplace.Migrations
 {
     [DbContext(typeof(MarketplaceDbContext))]
-    [Migration("20221021005002_Initial migration")]
+    [Migration("20221021110834_Initial migration")]
     partial class Initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,6 +70,32 @@ namespace marketplace.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("marketplace.Data.Entities.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AdId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("marketplace.Data.Entities.Ad", b =>
                 {
                     b.HasOne("marketplace.Data.Entities.Category", "Category")
@@ -79,6 +105,17 @@ namespace marketplace.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("marketplace.Data.Entities.Comment", b =>
+                {
+                    b.HasOne("marketplace.Data.Entities.Ad", "Ad")
+                        .WithMany()
+                        .HasForeignKey("AdId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ad");
                 });
 #pragma warning restore 612, 618
         }

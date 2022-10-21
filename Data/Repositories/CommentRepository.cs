@@ -28,7 +28,7 @@ public class CommentsRepository : ICommentsRepository
 
     public async Task<IReadOnlyList<Comment>> GetManyAsync(int adId)
     {
-        return await _marketplaceDbContext.Comments.Where(o => o.AdId == adId).ToListAsync(); ////??????????????
+        return await _marketplaceDbContext.Comments.Where(o => o.AdId == adId).ToListAsync(); 
     }
 
     public async Task CreateAsync(Comment comment)

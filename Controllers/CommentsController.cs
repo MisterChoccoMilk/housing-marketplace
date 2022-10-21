@@ -20,7 +20,7 @@ public class CommentsController : ControllerBase
     [HttpGet]
     public async Task<IEnumerable<CommentDto>> GetMany(int adId)
     {
-        var comments = await _commentsRepository.GetManyAsync(adId); ////???????????????????????
+        var comments = await _commentsRepository.GetManyAsync(adId);
         return comments.Select(o => new CommentDto(o.Id, o.Name, o.Message));
     }
 
