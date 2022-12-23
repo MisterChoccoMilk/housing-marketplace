@@ -174,7 +174,7 @@ Sukuria kategoriją nurodytais parametrais, funkcija prieinama tik administrator
 | Pavadinimas | Ar būtinas? | Apibūdinimas             | Pavyzdys             |
 | ----------- | ----------- | -------------------------| -------------------- |
 | name        | Taip        | Kategorijos pavadinimas  | `Pardavimui`         |
-| description | Taip        | Gyvūno tipas             | `NT pardavimui`      |
+| description | Taip        | kategorijos aprašas      | `NT pardavimui`      |
 
 #### Užklausos pavyzdys
 
@@ -206,7 +206,7 @@ Atnaujiną kategorijos duomenis su duotais parametrais, kurie buvo nurodyti užk
 
 | Pavadinimas | Ar būtinas? | Apibūdinimas             | Pavyzdys             |
 | ----------- | ----------- | -------------------------| -------------------- |
-| description | Taip        | Gyvūno tipas             | `NT pardavimui`      |
+| description | Taip        | kategorijos aprašas      | `NT pardavimui`      |
 
 #### Užklausos pavyzdys
 
