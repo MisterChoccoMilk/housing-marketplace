@@ -359,7 +359,7 @@ Sukuria skelbimą nurodytais parametrais
 }
 ```
 
-### PUT /animals/{id}/visits/{visitId}
+### PUT /categories/{id}/ads/{adId}
 
 Atnaujiną skelbimo duomenis su duotais parametrais, kurie buvo nurodyti užklausos metu, id kartu su URL, o kiti parametrai perduodami kartu su užklausos body
 
